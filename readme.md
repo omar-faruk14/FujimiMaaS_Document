@@ -1,5 +1,7 @@
 # ふじみ MaaS
-Fujimi MaaS is a comprehensive platform designed to　streamline event organization and enhance user experience through real-time tracking and notifications. This project leverages a combination of modern technologies including LINE message, Reactjs, express, open route service api,  integration, AWS Lambda, Kintone, and AWS Amplify to deliver a robust serverless solution.
+Fujimi MaaS is a comprehensive platform designed to　streamline event organization and enhance user experience through real-time tracking and notifications. This project leverages a combination of modern technologies including LINE message, Reactjs, express, open route service api integration, AWS Lambda, Kintone, and AWS Amplify to deliver a robust serverless solution.
+
+![Project Image](/img/Server-Less.jpg)
 
 # Table of Contents
 
@@ -11,6 +13,9 @@ Fujimi MaaS is a comprehensive platform designed to　streamline event organizat
 6. [Event Management](#event-management)
 7. [User Registration Integration](#user-registration-integration)
 
+
+
+
 ## Introduction
 
 The application interface for Fujimi MaaS includes an interactive map feature integrated with OpenStreetMap. The map displays various location markers, each representing different event venues or points of interest. By clicking on the "LINE Official Account" menu link, users can access this map view.
@@ -18,6 +23,22 @@ The application interface for Fujimi MaaS includes an interactive map feature in
 ![Project Image](/img/map1.jpg)
 
 Each marker on the map is linked to detailed event information specific to that location. Users can select a marker to view comprehensive details about the events happening at that place, enhancing their ability to find and participate in relevant activities.
+
+## Real time vehicle Tracking
+The Fujimi MaaS project includes a real-time vehicle tracking feature designed to enhance event management and user experience. This feature tracks vehicles involved in event operations, providing up-to-date information about their locations and status.
+
+![Project Image](/img/realtime_tracking.jpg)
+
+### Key Features
+**Real-Time Vehicle Tracking:**
+- Vehicles are tracked in real-time to monitor their locations and movements.
+- The system identifies which vehicle is assigned to pick up or drop off event participants.
+
+**Location Updates:**
+
+- Vehicle locations are updated every minute in the database, while the application provides real-time updates.
+- After each update, the vehicle's real-time location is recorded and stored in the database. This ensures that the data is up-to-date and accessible for real-time tracking and reporting.
+
 
 ## Facilities Section
 
@@ -61,6 +82,10 @@ The Event List Page allows users to view the latest events, with the nearest eve
 Register a user through a form or application that integrates with the LINE Official Account's LIFF system, allowing the page to load within the LINE app.
 
 ![Project Image](/img/line_message.jpg)
+
+Upon successful completion, it will return a text message using LINE.
+
+
 
 
 
