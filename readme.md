@@ -1,13 +1,15 @@
 # ふじみ MaaS
 Fujimi MaaS is a comprehensive platform designed to　streamline event organization and enhance user experience through real-time tracking and notifications. This project leverages a combination of modern technologies including LINE message, Reactjs, express, open route service api,  integration, AWS Lambda, Kintone, and AWS Amplify to deliver a robust serverless solution.
 
+# Table of Contents
 
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#Features)
-
+1. [Introduction](#introduction)
+2. [Facilities Section](#facilities-section)
+3. [Event Access Based on User Registration](#event-access-based-on-user-registration)
+4. [Event Section](#event-section)
+5. [Features](#features)
+6. [Event Management](#event-management)
+7. [User Registration Integration](#user-registration-integration)
 
 ## Introduction
 
@@ -17,7 +19,7 @@ The application interface for Fujimi MaaS includes an interactive map feature in
 
 Each marker on the map is linked to detailed event information specific to that location. Users can select a marker to view comprehensive details about the events happening at that place, enhancing their ability to find and participate in relevant activities.
 
-## Facilities_Section
+## Facilities Section
 
 The facilities details page in Fujimi MaaS provides in-depth information about the amenities available at each event location. This page displays a comprehensive list of facilities associated with each venue, ensuring users are well-informed about the available services and features.
 
@@ -31,14 +33,34 @@ In the Fujimi MaaS project, when a user clicks on "Jomon" or "Event List," the s
 
 If Registered: The system retrieves the appropriate event links from the database and displays them to the user, allowing access to event details and further actions.
 If Not Registered: The system notifies the user that they need to complete their registration to access the event information.
+
 ![Project Image](/img/jomon_menu.png)
+
 This process ensures that only registered users can view event links and participate, streamlining the user experience and maintaining event security.
 
+## Event Section
 
+The Event List Page allows users to view the latest events, with the nearest events appearing first. This page is fully dynamic, meaning all event data can be managed from the database.
 
-**Brief description**  of your project and what it aims to achieve.
+![Project Image](/img/event_list.jpg)
 
-## Features
-- <span style="color: green; font-size: 18px;">Feature 1</span>
+### Features
+**Latest Events Display:** The page shows the most recent events, sorted so that the nearest event appears first.
+
+**Dynamic Data:** All event information is pulled from the database, allowing for real-time updates.
+### Event Management:
+**Publish/Unpublish:** Event organizers can publish or unpublish events directly from the database.
+**Event Details:** Organizers can set various details for each event, including:
+- Event Name
+- Event Description
+- Start Date
+- End Date
+- Application Start Date
+- Application End Date
+
+Register a user through a form or application that integrates with the LINE Official Account's LIFF system, allowing the page to load within the LINE app.
+
+![Project Image](/img/line_message.jpg)
+
 
 
