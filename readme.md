@@ -3,6 +3,12 @@ Fujimi MaaS is a comprehensive platform designed to　streamline event organizat
 
 ![Project Image](/img/Server-Less.jpg)
 
+## Access the Fujimi MaaS Project
+
+You can view and access the Fujimi MaaS project using the QR code below with LINE Messenger:
+
+![Fujimi MaaS QR Code](img/fujimi_qr.jpeg)
+
 # Table of Contents
 
 1. [Introduction](#introduction)
