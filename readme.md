@@ -6,14 +6,15 @@ Fujimi MaaS is a comprehensive platform designed to　streamline event organizat
 # Table of Contents
 
 1. [Introduction](#introduction)
-2. [Facilities Section](#facilities-section)
-3. [Event Access Based on User Registration](#event-access-based-on-user-registration)
-4. [Event Section](#event-section)
-5. [Features](#features)
-6. [Event Management](#event-management)
-7. [User Registration Integration](#user-registration-integration)
-
-
+2. [Real-Time Vehicle Tracking](#real-time-vehicle-tracking)
+3. [Facilities Section](#facilities-section)
+4. [Event Access Based on User Registration](#event-access-based-on-user-registration)
+5. [Event Section](#event-section)
+    - [Features](#features)
+    - [Event Management](#event-management)
+6. [User Registration Integration](#user-registration-integration)
+7. [Optimal Route](#optimal-route)
+    - [Brute Force TSP Algorithm](#brute-force-tsp-algorithm)
 
 
 ## Introduction
@@ -50,10 +51,12 @@ For each location, the page outlines the various facilities provided, such as se
 
 ## Event Access Based on User Registration
 In the Fujimi MaaS project, when a user clicks on "Jomon" or "Event List," the system first checks the user's registration status by querying the database. This is achieved using AWS Lambda and Kintone integration through a webhook.
+
 ![Project Image](/img/event_menu.png)
 
 If Registered: The system retrieves the appropriate event links from the database and displays them to the user, allowing access to event details and further actions.
 If Not Registered: The system notifies the user that they need to complete their registration to access the event information.
+<br>
 
 ![Project Image](/img/jomon_menu.png)
 
@@ -84,6 +87,52 @@ Register a user through a form or application that integrates with the LINE Offi
 ![Project Image](/img/line_message.jpg)
 
 Upon successful completion, it will return a text message using LINE.
+
+## Optimal Route
+
+The Fujimi MaaS project aims to facilitate efficient event organization and provide transportation services in the Fujimi area. The primary goal is to optimize route planning to maximize the number of people picked up in the shortest possible time.
+Real-time route planning ensures efficient pick-up and drop-off services, minimizing wait times.
+
+**Route Optimization**
+
+The system uses the OpenStreetMap API to retrieve distance and duration matrices between specified locations. A brute-force approach solves the Travelling Salesman Problem (TSP) to find the optimal route.
+
+**Process:**
+
+- Data Collection: Retrieve distance and duration matrices for all locations (start point, waypoints, and end point).
+- Route Calculation: Determine the most efficient route using the distance matrix.
+- Output: Provide a detailed route plan, including distances and durations between stops.
+<br><br>
+
+![Project Image](/img/optimal2.jpg)
+
+### Brute Force TSP Algorithm
+
+The Brute Force TSP (Traveling Salesman Problem) algorithm comprehensively evaluates all possible permutations of routes to find the optimal path that minimizes total distance or time. This algorithm guarantees finding the shortest path.
+
+Implementation Details
+
+Input: The algorithm takes a set of locations with their respective coordinates as input.
+Process:
+
+#### Generate all permutations of waypoints.
+- Calculate the total distance for each permutation using a distance matrix.
+- Select the permutation with the smallest total distance as the optimal route.
+<br>
+
+![Project Image](/img/optimal1.jpg)
+
+<br>
+**Output:** 
+- The optimal order of locations and the corresponding distance and required time.
+
+
+
+**Advantages:**
+
+- Accuracy: By evaluating all possible routes, it guarantees the optimal solution.
+- Simplicity: The algorithm is easy to implement and understand.
+
 
 
 
